@@ -1,0 +1,42 @@
+﻿@model Panda.Models.Home.IndexViewModel
+
+<h1 class="text-center">Hello, Administrator @this.User.Identity.Name!</h1>
+<hr class="hr-2 bg-panda">
+<div class="d-flex justify-content-between">
+    <div class="w-25 bg-white">
+        <h2 class="text-center">Pending</h2>
+        <div class="border-panda p-3">
+            @foreach (var p in Model.Pending)
+            {
+                <div class="p-2 d-flex justify-content-around">
+                    <h4 class="w-75">@p.Description</h4>
+                    <a href="/Packages/Details?Id=@p.Id" class="btn bg-panda text-white w-25">Details</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="w-25 bg-white">
+        <h2 class="text-center">Shipped</h2>
+        <div class="border-panda p-3">
+            @foreach (var p in Model.Shipped)
+            {
+                <div class="p-2 d-flex justify-content-around">
+                    <h4 class="w-75">@p.Description</h4>
+                    <a href="/Packages/Details?Id=@p.Id" class="btn bg-panda text-white w-25">Details</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="w-25 bg-white">
+        <h2 class="text-center">Delivered</h2>
+        <div class="border-panda p-3">
+            @foreach (var p in Model.Delivered)
+            {
+                <div class="p-2 d-flex justify-content-around">
+                    <h4 class="w-75">@p.Description</h4>
+                    <a href="/Packages/Acquire?Id=@p.Id" class="btn bg-panda text-white w-25">Acquire</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

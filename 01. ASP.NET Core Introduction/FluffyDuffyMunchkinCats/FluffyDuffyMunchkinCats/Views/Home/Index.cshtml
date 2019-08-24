@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<CatViewModel>
+
+<h1>Fluffy Duffy Munchkin Cats</h1>
+<ul class="list-group list-group-flush">
+    @foreach (var cat in Model)
+    {
+        <li class="list-group-item">
+            <a href="/cats/details?Id=@cat.Id" class="list-group-item list-group-item-action">@cat.Name</a>
+        </li>
+    }
+</ul>
+</br>
+<div>
+    <form method="get" asp-controller="Cats" asp-action="Add">
+        <button type="submit" class="btn btn-outline-success">Add Cat</button>
+    </form>
+</div>
