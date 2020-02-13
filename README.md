@@ -5,3 +5,4 @@ Exercises
 - ML.NET
 - SignalR
 - EF Core
+- Identity Server
